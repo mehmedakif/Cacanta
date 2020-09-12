@@ -19,12 +19,12 @@ namespace Cacanta.WebUI.Repository.Concrete.EntityFramework
 
         public IQueryable<Product> Products { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-        public List<Product> GetTop5Products()
+        public void RemoveProduct(int productid)
         {
-            return CacantaContext.Products
-                 .OrderByDescending(i => i.ProductId)
-                 .Take(5)
-                 .ToList();
+            Product ctg = CacantaContext.Products
+            .Where(i => i.ProductId == productid)
+            .FirstOrDefault();
+            CacantaContext.Remove(ctg);
         }
     }
 }

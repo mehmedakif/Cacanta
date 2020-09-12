@@ -1,0 +1,24 @@
+[
+  {
+    "outputFileName": "wwwroot/lib/bootstrap/css/bundle.css",
+    "inputFiles": [
+      "wwwroot/lib/bootstrap/css/swiper.min.css",
+      "wwwroot/lib/bootstrap/css/bootstrap.css",
+      "wwwroot/lib/bootstrap/css/bootstrap-grid.css",
+      "wwwroot/lib/bootstrap/css/bootstrap-reboot.css",
+      "wwwroot/lib/bootstrap/css/magnific-popup.css",
+      "wwwroot/lib/bootstrap/css/opencart.css",
+      "wwwroot/lib/bootstrap/css/stylesheet.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/lib/bootstrap/js/bundle.js",
+    "inputFiles": [
+      "wwwroot/lib/bootstrap/js/jquery-2.1.1.min.js",
+      "wwwroot/lib/bootstrap/js/bootstrap.min.js",
+      "wwwroot/lib/bootstrap/js/swiper.jquery.js",
+      "wwwroot/lib/bootstrap/js/common.js",
+      "wwwroot/lib/bootstrap/js/jquery.magnific-popup.min.js"
+    ]
+  }
+]

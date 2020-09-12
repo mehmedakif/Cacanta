@@ -1,0 +1,9 @@
+﻿@model IEnumerable<CategoryModel>
+
+
+    <option value="" disabled selected>Kategorileri seçin</option>
+    @foreach (var item in Model)
+    {
+        <option value="@item.CategoryName">@item.CategoryName</option>
+    }
+

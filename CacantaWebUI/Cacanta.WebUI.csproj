@@ -17,11 +17,32 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
+    <Content Remove="bundleconfig.json" />
+    <Content Remove="wwwroot\lib\bootstrap\js\jquery-2.1.1.min.js" />
+    <Content Remove="wwwroot\lib\bootstrap\js\jquery.magnific-popup.min.js" />
+    <Content Remove="wwwroot\lib\bootstrap\js\swiper.jquery.js" />
+    <Content Remove="wwwroot\lib\bootstrap\js\swiper.js" />
+    <Content Remove="wwwroot\PAŞA NARGİLE - Nargileye Dair Herşey %28Nargile Takımı, Nargile Set, Nargile Tütünü, Nargile Malzemeleri, Nargile Aksesuarları%29_files\bootstrap.min.css" />
+    <Content Remove="wwwroot\PAŞA NARGİLE - Nargileye Dair Herşey %28Nargile Takımı, Nargile Set, Nargile Tütünü, Nargile Malzemeleri, Nargile Aksesuarları%29_files\customize.css" />
+    <Content Remove="wwwroot\PAŞA NARGİLE - Nargileye Dair Herşey %28Nargile Takımı, Nargile Set, Nargile Tütünü, Nargile Malzemeleri, Nargile Aksesuarları%29_files\font-awesome.min.css" />
+    <Content Remove="wwwroot\PAŞA NARGİLE - Nargileye Dair Herşey %28Nargile Takımı, Nargile Set, Nargile Tütünü, Nargile Malzemeleri, Nargile Aksesuarları%29_files\magnific-popup.css" />
+    <Content Remove="wwwroot\PAŞA NARGİLE - Nargileye Dair Herşey %28Nargile Takımı, Nargile Set, Nargile Tütünü, Nargile Malzemeleri, Nargile Aksesuarları%29_files\opencart.css" />
+    <Content Remove="wwwroot\PAŞA NARGİLE - Nargileye Dair Herşey %28Nargile Takımı, Nargile Set, Nargile Tütünü, Nargile Malzemeleri, Nargile Aksesuarları%29_files\stylesheet.css" />
+    <Content Remove="wwwroot\PAŞA NARGİLE - Nargileye Dair Herşey %28Nargile Takımı, Nargile Set, Nargile Tütünü, Nargile Malzemeleri, Nargile Aksesuarları%29_files\swiper.min.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\css\bundle.css" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="node_modules\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="BuildBundlerMinifier" Version="3.2.449" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.7" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.7" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.7">
       <PrivateAssets>all</PrivateAssets>
@@ -32,7 +53,28 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="3.1.7" />
+    <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="3.1.7" />
 	  <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.Dotnet" Version="2.0.0"></DotNetCliToolReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bundleconfig.json" />
+    <None Include="Views\Shared\Components\CategoryMenu\Default.cshtml" />
+    <None Include="Views\Shared\Components\FeaturedProducts\Default.cshtml" />
+    <None Include="wwwroot\lib\bootstrap\js\jquery-2.1.1.min.js" />
+    <None Include="wwwroot\lib\bootstrap\js\jquery.magnific-popup.min.js" />
+    <None Include="wwwroot\lib\bootstrap\js\swiper.jquery.js" />
+    <None Include="wwwroot\lib\bootstrap\js\swiper.js" />
+    <None Include="wwwroot\PAŞA NARGİLE - Nargileye Dair Herşey %28Nargile Takımı, Nargile Set, Nargile Tütünü, Nargile Malzemeleri, Nargile Aksesuarları%29_files\analytics.js.download" />
+    <None Include="wwwroot\PAŞA NARGİLE - Nargileye Dair Herşey %28Nargile Takımı, Nargile Set, Nargile Tütünü, Nargile Malzemeleri, Nargile Aksesuarları%29_files\bootstrap.min.js" />
+    <None Include="wwwroot\lib\bootstrap\js\common.js" />
+    <None Include="wwwroot\PAŞA NARGİLE - Nargileye Dair Herşey %28Nargile Takımı, Nargile Set, Nargile Tütünü, Nargile Malzemeleri, Nargile Aksesuarları%29_files\css" />
+    <None Include="wwwroot\PAŞA NARGİLE - Nargileye Dair Herşey %28Nargile Takımı, Nargile Set, Nargile Tütünü, Nargile Malzemeleri, Nargile Aksesuarları%29_files\jquery-2.1.1.min.js" />
+    <None Include="wwwroot\PAŞA NARGİLE - Nargileye Dair Herşey %28Nargile Takımı, Nargile Set, Nargile Tütünü, Nargile Malzemeleri, Nargile Aksesuarları%29_files\jquery.magnific-popup.min.js" />
+    <None Include="wwwroot\PAŞA NARGİLE - Nargileye Dair Herşey %28Nargile Takımı, Nargile Set, Nargile Tütünü, Nargile Malzemeleri, Nargile Aksesuarları%29_files\js" />
+    <None Include="wwwroot\PAŞA NARGİLE - Nargileye Dair Herşey %28Nargile Takımı, Nargile Set, Nargile Tütünü, Nargile Malzemeleri, Nargile Aksesuarları%29_files\swiper.jquery.js" />
+    <None Include="wwwroot\PAŞA NARGİLE - Nargileye Dair Herşey %28Nargile Takımı, Nargile Set, Nargile Tütünü, Nargile Malzemeleri, Nargile Aksesuarları%29_files\swiper.js" />
   </ItemGroup>
 
 </Project>

@@ -17,7 +17,7 @@ namespace Cacanta.WebUI.Repository.Concrete.EntityFramework
 
         private IProductRepository _products;
         private ICategoryRepository _categories;
-
+        private IOrderRepository _orders;
 
         public IProductRepository Products
         {
@@ -35,6 +35,13 @@ namespace Cacanta.WebUI.Repository.Concrete.EntityFramework
             }
         }
 
+        public IOrderRepository Orders
+        {
+            get
+            {
+                return _orders ?? (_orders = new EfOrderRepository(dbContext));
+            }
+        }
 
         public int SaveChanges()
         {

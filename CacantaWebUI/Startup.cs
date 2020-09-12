@@ -11,6 +11,8 @@ using Microsoft.EntityFrameworkCore;
 using Cacanta.WebUI.Repository.Concrete.EntityFramework;
 using Cacanta.WebUI.Repository.Abstract;
 using Microsoft.Extensions.Hosting;
+using Cacanta.WebUI.IdentityCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace CacantaWebUI
 {
@@ -26,17 +28,24 @@ namespace CacantaWebUI
         public void ConfigureServices(IServiceCollection services)
         {
 
-            
-            services.AddDbContext<CacantaContext>(options =>
-        options.UseSqlServer(Configuration.GetConnectionString("Myconnection")));
             services.AddDbContext<CacantaContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("Myconnection")));
+
+            services.AddDbContext<ApplicationIdentityDbContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection")));
+
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<ApplicationIdentityDbContext>()
+                .AddDefaultTokenProviders();
+
             services.AddTransient<IProductRepository, EfProductRepository>();
             services.AddTransient<ICategoryRepository, EfCategoryRepository>();
+            services.AddTransient<IOrderRepository, EfOrderRepository>();
             services.AddTransient<IUnitOfWork, EfUnitOfWork>();
-            services.AddMvc(options => options.EnableEndpointRouting = false);
-            
-
+            services.AddDistributedMemoryCache();
+            services.AddMvc(options => options.EnableEndpointRouting = false)  
+            .AddSessionStateTempDataProvider();
+            services.AddSession();
 
         }
 
@@ -51,16 +60,23 @@ namespace CacantaWebUI
             {
                 app.UseDeveloperExceptionPage();
             }
-         
 
             app.UseStaticFiles();
-            app.UseRouting();
+            app.UseStatusCodePages();
+            app.UseSession();
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                     name: "products",
+                     template: "products/{category?}",
+                     defaults: new { controller = "Product", action = "List" });
+
+                routes.MapRoute(
+                       name: "default",
+                       template: "{controller=Home}/{action=Index}/{id?}");
             });
+
             SeedData.EnsurePopulated(app);
         }
     }

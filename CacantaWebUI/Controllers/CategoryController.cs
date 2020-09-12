@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Cacanta.WebUI.Entity;
 using Cacanta.WebUI.Repository.Abstract;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,6 +21,12 @@ namespace Cacanta.WebUI.Controllers
         {
             var cat = repository.GetByName("Electronics");
             return View(cat);
+        }
+
+        public IQueryable GetAll()
+        {
+            IQueryable<Category> cat = repository.GetAll();
+            return cat;
         }
     }
 }

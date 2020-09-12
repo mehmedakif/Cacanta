@@ -6,13 +6,145 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>_Layout</title>
-    <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/css/bundle.css" rel="stylesheet" />
+    <script src="~/lib/bootstrap/js/bundle.js"></script>
 </head>
 <body>
-    @RenderBody()
 
-    <footer class="container py-5">
-        @Html.Partial("_Footer")
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div id="logo">
+                        <a href="/">
+                            <img src="~/lib/bootstrap/img/rsz_no_panda.png" title="VIYA KIDS" alt="VIYA KIDS" class="img-responsive" />
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-5" style="padding-top:30px">
+                    <div id="search" class="input-group">
+                        <input type="text" name="search" value="" placeholder="Ne aramıştınız?" class="form-control input-lg">
+                        <span class="input-group-btn">
+                            <button class="btn btn-unique btn-rounded btn-sm my-0 waves-effect waves-light" type="submit">Search</button>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-sm-3" style="padding-top:30px">
+                    <form asp-action="Index" asp-controller="Cart">
+                        <button type="submit" class="btn-block btn-lg btn-dark">
+                            <i class="fa fa-cart-plus fa-fw"></i> Sepet (@await Component.InvokeAsync("CartSum"))
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container" style="padding-bottom:30px">
+        <nav id="menu" class="navbar">
+            <div class="navbar navbar-expand-lg">
+                <div class="navbar-collapse navbar-ex1-collapse collapse in">
+                    <ul class="nav navbar-nav">
+
+                        <li class="dropdown">
+                            <a href="https://pasanargile.com/nargile-takimi" class="dropdown-toggle" data-toggle="dropdown">UST KATEGORI</a>
+                            <div class="dropdown-menu" style="">
+                                <div class="dropdown-inner">
+                                    <ul class="list-unstyled">
+                                        <li><a href="https://pasanargile.com/nargile-takimi/mr-eds-nargile-takimi">ALT KATEGORI</a></li>
+                                        <li><a href="https://pasanargile.com/nargile-takimi/kings-comfort-nargile-takimi">ALT KATEGORI</a></li>
+                                    </ul>
+                                    <ul class="list-unstyled">
+                                        <li><a href="https://pasanargile.com/nargile-takimi/cam-nargile-takimi">ALT KATEGORI</a></li>
+                                        <li><a href="https://pasanargile.com/nargile-takimi/celik-nargile-takimi">ALT KATEGORI</a></li>
+                                    </ul>
+                                </div>
+                                <a href="https://pasanargile.com/nargile-takimi" class="see-all">Tümünü Göster ALT KATEGORI</a>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="https://pasanargile.com/nargile-takimi" class="dropdown-toggle" data-toggle="dropdown">UST KATEGORI</a>
+                            <div class="dropdown-menu" style="">
+                                <div class="dropdown-inner">
+                                    <ul class="list-unstyled">
+                                        <li><a href="https://pasanargile.com/nargile-takimi/mr-eds-nargile-takimi">ALT KATEGORI</a></li>
+                                        <li><a href="https://pasanargile.com/nargile-takimi/kings-comfort-nargile-takimi">ALT KATEGORI</a></li>
+                                    </ul>
+                                    <ul class="list-unstyled">
+                                        <li><a href="https://pasanargile.com/nargile-takimi/cam-nargile-takimi">ALT KATEGORI</a></li>
+                                        <li><a href="https://pasanargile.com/nargile-takimi/celik-nargile-takimi">ALT KATEGORI</a></li>
+                                    </ul>
+                                </div>
+                                <a href="https://pasanargile.com/nargile-takimi" class="see-all">Tümünü Göster ALT KATEGORI</a>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="https://pasanargile.com/nargile-takimi" class="dropdown-toggle" data-toggle="dropdown">UST KATEGORI</a>
+                            <div class="dropdown-menu" style="">
+                                <div class="dropdown-inner">
+                                    <ul class="list-unstyled">
+                                        <li><a href="https://pasanargile.com/nargile-takimi/mr-eds-nargile-takimi">ALT KATEGORI</a></li>
+                                        <li><a href="https://pasanargile.com/nargile-takimi/kings-comfort-nargile-takimi">ALT KATEGORI</a></li>
+                                    </ul>
+                                    <ul class="list-unstyled">
+                                        <li><a href="https://pasanargile.com/nargile-takimi/cam-nargile-takimi">ALT KATEGORI</a></li>
+                                        <li><a href="https://pasanargile.com/nargile-takimi/celik-nargile-takimi">ALT KATEGORI</a></li>
+                                    </ul>
+                                </div>
+                                <a href="https://pasanargile.com/nargile-takimi" class="see-all">Tümünü Göster ALT KATEGORI</a>
+                            </div>
+                        </li>
+
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    @RenderBody()
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h5>Bilgiler</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https://pasanargile.com/kurye-ile-ayni-gun-teslimat">Aynı Gün Teslimat</a></li>
+                        <li><a href="https://pasanargile.com/sartlar-kosullar">Şartlar &amp; Koşullar</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>Müşteri Servisi</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https://pasanargile.com/nargile">Nargile Hakkında</a></li>
+                        <li><a href="https://pasanargile.com/index.php?route=information/contact">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>Ekstralar</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https://pasanargile.com/index.php?route=product/manufacturer">Markalar</a></li>
+                        <li><a href="https://pasanargile.com/index.php?route=account/voucher">Hediye Çeki</a></li>
+
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>Hesabım</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https://pasanargile.com/index.php?route=account/account">Hesabım</a></li>
+                        <li><a href="https://pasanargile.com/index.php?route=account/order">Siparişlerim</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="col-lg-12" style="text-align:center;">
+                Kuyumcukent Avm Mağazalar Bloğu Elmas Sok. No:154 Yenibosna / Bahçelievler - İstanbul<br>
+                <a href="tel:+902124529812">0(212) 452 98 12</a>
+            </div>
+
+            <p style="float: right;"><img src="./PAŞA NARGİLE - Nargileye Dair Herşey (Nargile Takımı, Nargile Set, Nargile Tütünü, Nargile Malzemeleri, Nargile Aksesuarları)_files/footer-ssl.png" alt="SSL Güvenlikli Site"></p>
+            <p>PAŞA NARGİLE - Nargileye Dair Herşey</p>
+            <p>&nbsp;&nbsp;&nbsp;</p>
+            <p>&nbsp;&nbsp;&nbsp;</p>
+        </div>
     </footer>
 </body>
 </html>

@@ -8,6 +8,6 @@ namespace Cacanta.WebUI.Repository.Abstract
 {
     public interface IProductRepository : IGenericRepository<Product>
     {
-        List<Product> GetTop5Products();
+        void RemoveProduct(int productid);
     }
 }
